@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   نظام تصميم "ترسية" — Material 3 (سمة خضراء مؤسسية) + عربي RTL
+   منقول من نظام التصميم المعتمد من المالك.
+   ========================================================================= */
+
+@theme {
+  /* ----- الخطوط ----- */
+  --font-sans: var(--font-ibm-arabic), var(--font-ibm-latin), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-mono), ui-monospace, monospace;
+
+  /* ----- الألوان: أساسي (أخضر مؤسسي عميق) ----- */
+  --color-primary: #003527;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #064e3b;
+  --color-on-primary-container: #80bea6;
+  --color-primary-fixed: #b0f0d6;
+  --color-primary-fixed-dim: #95d3ba;
+  --color-on-primary-fixed: #002117;
+  --color-on-primary-fixed-variant: #0b513d;
+  --color-inverse-primary: #95d3ba;
+  --color-surface-tint: #2b6954;
+
+  /* ----- ثانوي (أزرق رمادي هادئ) ----- */
+  --color-secondary: #545f73;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d5e0f8;
+  --color-on-secondary-container: #3c475a;
+  --color-secondary-fixed: #d8e3fb;
+  --color-secondary-fixed-dim: #bcc7de;
+
+  /* ----- ثلاثي (محايد داكن) ----- */
+  --color-tertiary: #2b2f30;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #dfe3e4;
+  --color-on-tertiary-container: #424547;
+
+  /* ----- حالات: خطأ / تحذير / نجاح / معلومة ----- */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-warning: #8a5100;
+  --color-on-warning: #ffffff;
+  --color-warning-container: #ffddb8;
+  --color-on-warning-container: #2c1600;
+
+  --color-success: #146c43;
+  --color-on-success: #ffffff;
+  --color-success-container: #c2f0d4;
+  --color-on-success-container: #00210f;
+
+  --color-info: #1b6383;
+  --color-on-info: #ffffff;
+  --color-info-container: #c2e8ff;
+  --color-on-info-container: #001e2c;
+
+  /* ----- الأسطح ----- */
+  --color-background: #f8faf6;
+  --color-on-background: #191c1b;
+  --color-surface: #f8faf6;
+  --color-on-surface: #191c1b;
+  --color-surface-variant: #e1e3e0;
+  --color-on-surface-variant: #404944;
+  --color-surface-dim: #d8dbd7;
+  --color-surface-bright: #f8faf6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f1;
+  --color-surface-container: #eceeeb;
+  --color-surface-container-high: #e7e9e5;
+  --color-surface-container-highest: #e1e3e0;
+  --color-inverse-surface: #2e312f;
+  --color-inverse-on-surface: #eff1ee;
+
+  /* ----- الحدود ----- */
+  --color-outline: #707974;
+  --color-outline-variant: #bfc9c3;
+
+  /* ----- المسافات (4/8) ----- */
+  --spacing-xs: 0.25rem;   /* 4 */
+  --spacing-sm: 0.5rem;    /* 8 */
+  --spacing-md: 1rem;      /* 16 */
+  --spacing-gutter: 1.25rem; /* 20 */
+  --spacing-lg: 1.5rem;    /* 24 */
+  --spacing-container: 2rem; /* 32 */
+  --spacing-xl: 2.5rem;    /* 40 */
+  --spacing-2xl: 4rem;     /* 64 */
+
+  /* ----- أنصاف الأقطار ----- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* ----- مقياس الطباعة ----- */
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 3.75rem;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg--letter-spacing: -0.02em;
+
+  --text-display-md: 2.5rem;
+  --text-display-md--line-height: 3rem;
+  --text-display-md--font-weight: 700;
+  --text-display-md--letter-spacing: -0.01em;
+
+  --text-headline-lg: 2rem;
+  --text-headline-lg--line-height: 2.5rem;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-md: 1.5rem;
+  --text-headline-md--line-height: 2rem;
+  --text-headline-md--font-weight: 600;
+
+  --text-title-lg: 1.25rem;
+  --text-title-lg--line-height: 1.75rem;
+  --text-title-lg--font-weight: 600;
+
+  --text-title-md: 1rem;
+  --text-title-md--line-height: 1.5rem;
+  --text-title-md--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.75rem;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.5rem;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 0.875rem;
+  --text-label-md--line-height: 1.25rem;
+  --text-label-md--font-weight: 500;
+  --text-label-md--letter-spacing: 0.01em;
+
+  --text-label-sm: 0.8125rem;
+  --text-label-sm--line-height: 1.125rem;
+  --text-label-sm--font-weight: 500;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--font-weight: 400;
+
+  /* ----- الظلال (طبقية خفيفة) ----- */
+  --shadow-e1: 0 1px 2px 0 rgb(0 33 23 / 0.06), 0 1px 3px 0 rgb(0 33 23 / 0.05);
+  --shadow-e2: 0 2px 6px -1px rgb(0 33 23 / 0.08), 0 1px 4px -1px rgb(0 33 23 / 0.06);
+  --shadow-e3: 0 8px 24px -6px rgb(0 33 23 / 0.12), 0 4px 8px -4px rgb(0 33 23 / 0.06);
+}
+
+/* =========================================================================
+   الأساسات
+   ========================================================================= */
+@layer base {
+  * {
+    border-color: var(--color-outline-variant);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01";
+    line-height: 1.6;
+  }
+
+  /* أرقام لاتينية بخط Plex حتى داخل النص العربي للاتساق */
+  .nums {
+    font-family: var(--font-ibm-latin), var(--font-ibm-arabic), sans-serif;
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    unicode-bidi: embed;
+  }
+
+  /* إمكانية وصول AA: حلقة تركيز واضحة */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-fixed);
+    color: var(--color-on-primary-fixed);
+  }
+}
+
+/* =========================================================================
+   أدوات مساعدة
+   ========================================================================= */
+@layer utilities {
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-outline-variant) transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-outline);
+    background-clip: content-box;
+  }
+
+  /* أيقونات Material Symbols */
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    line-height: 1;
+    user-select: none;
+  }
+  .material-symbols-outlined.filled {
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+
+  /* نبض تحليل الذكاء الاصطناعي */
+  @keyframes ai-pulse {
+    0%,
+    100% {
+      border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    }
+    50% {
+      border-color: var(--color-primary);
+    }
+  }
+  .ai-processing {
+    animation: ai-pulse 2.4s infinite ease-in-out;
+  }
+
+  /* ظهور متدرّج عند تحميل الصفحة */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .rise-in {
+    animation: rise-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-processing,
+    .rise-in {
+      animation: none;
+    }
+  }
+}
