@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Ftenders\u002F[id]\u002Fmatrix","\u002Ftenders\u002F[id]\u002Freadiness","\u002Ftenders\u002F[id]\u002Fworkspace"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
