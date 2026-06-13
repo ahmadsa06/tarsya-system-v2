@@ -24,7 +24,20 @@ jobs:
       - name: بناء (تصدير ثابت إلى out/)
         run: npm run build
 
+      - name: التحقّق من توفّر أسرار FTP
+        id: ftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: |
+          if [ -n "$FTP_SERVER" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::لم تُضف أسرار FTP بعد — تم تخطّي النشر. أضف FTP_SERVER/USERNAME/PASSWORD/SERVER_DIR لتفعيله."
+          fi
+
       - name: النشر عبر FTP إلى النطاق الفرعي
+        if: steps.ftp.outputs.ready == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
