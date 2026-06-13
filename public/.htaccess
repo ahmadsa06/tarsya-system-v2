@@ -1,5 +1,11 @@
 # إعدادات Apache لاستضافة التصدير الثابت لـ "ترسية" على Hostinger (system.tarsya.net)
 
+# منع الوصول لمجلد .git وملفاته (في حال النشر عبر git clone)
+RedirectMatch 404 /\.git
+<FilesMatch "^\.(git|gitignore|htaccess)">
+  Require all denied
+</FilesMatch>
+
 # صفحة 404 المخصّصة من Next
 ErrorDocument 404 /404.html
 
